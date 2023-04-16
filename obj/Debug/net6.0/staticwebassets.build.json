@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "eNI8RgIvGRBqGIOOj4X7HOG4IIViBcM30gGQWe0kthg=",
+  "Source": "ApiSoftFinance",
+  "BasePath": "_content/ApiSoftFinance",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
