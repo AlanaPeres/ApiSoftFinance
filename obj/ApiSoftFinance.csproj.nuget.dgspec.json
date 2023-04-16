@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alana\\source\\repos\\Back-End\\ApiSoftFinance\\ApiSoftFinance.csproj": {}
+    "C:\\Users\\alana\\Desktop\\ApiSoftFinance\\ApiSoftFinance.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alana\\source\\repos\\Back-End\\ApiSoftFinance\\ApiSoftFinance.csproj": {
+    "C:\\Users\\alana\\Desktop\\ApiSoftFinance\\ApiSoftFinance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alana\\source\\repos\\Back-End\\ApiSoftFinance\\ApiSoftFinance.csproj",
+        "projectUniqueName": "C:\\Users\\alana\\Desktop\\ApiSoftFinance\\ApiSoftFinance.csproj",
         "projectName": "ApiSoftFinance",
-        "projectPath": "C:\\Users\\alana\\source\\repos\\Back-End\\ApiSoftFinance\\ApiSoftFinance.csproj",
+        "projectPath": "C:\\Users\\alana\\Desktop\\ApiSoftFinance\\ApiSoftFinance.csproj",
         "packagesPath": "C:\\Users\\alana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alana\\source\\repos\\Back-End\\ApiSoftFinance\\obj\\",
+        "outputPath": "C:\\Users\\alana\\Desktop\\ApiSoftFinance\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alana\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,15 +46,15 @@
               "target": "Package",
               "version": "[7.0.5, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.15, )"
-            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.5, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.32.1, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",

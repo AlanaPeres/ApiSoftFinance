@@ -1,6 +1,9 @@
-using ApiSoftFinance.Infra;
+using ApiSoftFinance.Context;
 using Microsoft.EntityFrameworkCore;
-using System;
+using Microsoft.Extensions.Options;
+using MySqlConnector;
+using Pomelo.EntityFrameworkCore.MySql;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,12 +14,24 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//string de conexão
-string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
+string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+builder.Services.AddDbContext<AppDbContext>(options =>
+options.UseMySql(connectionString,
+ServerVersion.AutoDetect(connectionString)));
 
-builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(mySqlConnection,
-    ServerVersion.AutoDetect(mySqlConnection)));
+string conn = "Server=soft-finance.mysql.database.azure.com;Port=3306;Database=db_softfinance;Uid=soft@softfinance;Pwd=soft2023finance;Connect Timeout=60;SslMode=Required;";
+
+MySqlConnection connection = new MySqlConnection(conn);
+
+try
+{
+    connection.Open();
+}
+catch(Exception ex)
+{
+    Console.WriteLine("erro", ex.ToString());
+}
 
 var app = builder.Build();
 app.UseHttpsRedirection();
