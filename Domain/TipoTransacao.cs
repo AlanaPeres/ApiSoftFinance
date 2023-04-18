@@ -1,8 +1,12 @@
-﻿namespace ApiSoftFinance.Domain
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ApiSoftFinance.Domain
 {
+    [NotMapped]
     public class TipoTransacao
     {
-        public bool Deposito { get; set; }
-        public bool Transferencia { get; set; }
+        public char Deposito { get; set; }
+        public char Transferencia { get; set; }
     }
 }
