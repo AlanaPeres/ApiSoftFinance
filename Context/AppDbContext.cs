@@ -13,20 +13,23 @@ namespace ApiSoftFinance.Context
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<ContaBancaria> Contas { get; set; }
         public DbSet<Transacao> Transacoes { get; set; }
-    
 
-       public void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Cliente>()
-            .HasKey(t => t.Cpf);                      
+       
+        /*  public void OnModelCreating(ModelBuilder modelBuilder)
+           {
+               modelBuilder.Entity<Cliente>()
+               .HasOne(cb => cb.Cpf)
+               .WithOne(c => c.Cpf)
+               .HasKey(t => t.Cpf)
+               .IsRequired();
 
-            modelBuilder.Entity<Transacao>()
-                .HasKey(t => t.Cpf);
+               modelBuilder.Entity<Transacao>()
+                   .HasKey(t => t.Cpf);
 
-            modelBuilder.Entity<ContaBancaria>()
-               .HasKey(x => x.ContaBancariaId);
+               modelBuilder.Entity<ContaBancaria>()
+                  .HasKey(x => x.ContaBancariaId);
 
-        }
+           }*/
 
 
 

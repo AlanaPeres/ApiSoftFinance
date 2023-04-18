@@ -19,17 +19,15 @@ namespace ApiSoftFinance.Domain
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
-        public ContaBancaria? ContaBancaria { get; set; }
+       
 
         public Cliente() { }
-
-        public Cliente(string nome, string cpf, DateTime dataNascimento, string email, ContaBancaria conta, string cep, string rua, int numero, string complemento, string bairro, string cidade, string estado)
+        public Cliente(string nome, string cpf, DateTime dataNascimento, string email, string cep, string rua, int numero, string complemento, string bairro, string cidade, string estado)
         {
             Nome = nome;
             Cpf = cpf;
             DataNascimento = dataNascimento;
-            Email = email;
-            ContaBancaria = conta;
+            Email = email;       
             Cep = cep;
             Rua = rua;
             Numero = numero;

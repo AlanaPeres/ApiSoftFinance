@@ -9,8 +9,9 @@ namespace ApiSoftFinance.Domain
         public string? Cpf { get; set; }
         [Key]
         public int Id { get; set; }
+        public string CpfDestino { get; set; }
         public decimal Valor { get; set; }
-        public DateTime Data { get; set; }        
+        public DateTime DataHora { get; set; }        
         public TipoTransacao? TipoTransacao { get; set; }
     }
 }
