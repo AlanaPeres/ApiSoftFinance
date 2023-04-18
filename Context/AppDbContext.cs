@@ -15,17 +15,16 @@ namespace ApiSoftFinance.Context
         public DbSet<Transacao> Transacoes { get; set; }
     
 
-        public void OnModelCreating(ModelBuilder modelBuilder)
+       public void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cliente>()
-            .HasOne(c => c.ContaBancaria)
-            .WithOne(cb => cb.Cliente)
-            .HasForeignKey<ContaBancaria>(cb => cb.ClienteId)
-            .IsRequired();
+            .HasKey(t => t.Cpf);                      
 
             modelBuilder.Entity<Transacao>()
-                .HasKey(t => t.Id);
-                
+                .HasKey(t => t.Cpf);
+
+            modelBuilder.Entity<ContaBancaria>()
+               .HasKey(x => x.ContaBancariaId);
 
         }
 

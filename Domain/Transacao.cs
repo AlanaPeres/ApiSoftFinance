@@ -5,13 +5,12 @@ namespace ApiSoftFinance.Domain
 {
     public class Transacao
     {
+        [ForeignKey("CPF")]
+        public string? Cpf { get; set; }
         [Key]
         public int Id { get; set; }
-        public Cliente? Cliente { get; set; }
         public decimal Valor { get; set; }
-        public DateTime Data { get; set; }
-        [ForeignKey("TipoTransacaoId")]
-        public int TipoTransacaoId { get; set; }
+        public DateTime Data { get; set; }        
         public TipoTransacao? TipoTransacao { get; set; }
     }
 }

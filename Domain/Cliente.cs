@@ -6,8 +6,8 @@ namespace ApiSoftFinance.Domain
 {
     public class Cliente
     {
+
         [Key]
-        public int ClienteId { get; set; }
         public string?  Cpf { get; set; }
         public string? Nome { get; set; }
         public string? Email { get; set; }
@@ -19,9 +19,6 @@ namespace ApiSoftFinance.Domain
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
-
-        [ForeignKey("ContaBancaria")] 
-        public int ContaBancariaId { get; set; }
         public ContaBancaria? ContaBancaria { get; set; }
 
         public Cliente() { }

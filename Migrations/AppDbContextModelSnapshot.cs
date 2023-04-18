@@ -21,9 +21,8 @@ namespace ApiSoftFinance.Migrations
 
             modelBuilder.Entity("ApiSoftFinance.Domain.Cliente", b =>
                 {
-                    b.Property<int>("ClienteId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Cpf")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Bairro")
                         .IsRequired()
@@ -41,11 +40,8 @@ namespace ApiSoftFinance.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("ContaBancariaId")
+                    b.Property<int?>("ContaBancariaId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Cpf")
-                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime(6)");
@@ -67,10 +63,9 @@ namespace ApiSoftFinance.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("ClienteId");
+                    b.HasKey("Cpf");
 
-                    b.HasIndex("ContaBancariaId")
-                        .IsUnique();
+                    b.HasIndex("ContaBancariaId");
 
                     b.ToTable("Clientes");
                 });
@@ -84,8 +79,8 @@ namespace ApiSoftFinance.Migrations
                     b.Property<int>("Agencia")
                         .HasColumnType("int");
 
-                    b.Property<int>("ClienteId")
-                        .HasColumnType("int");
+                    b.Property<string>("Cpf")
+                        .HasColumnType("longtext");
 
                     b.Property<decimal>("Saldo")
                         .HasColumnType("decimal(65,30)");
@@ -104,21 +99,16 @@ namespace ApiSoftFinance.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("ClienteId")
-                        .HasColumnType("int");
+                    b.Property<string>("Cpf")
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<int>("TipoTransacaoId")
-                        .HasColumnType("int");
 
                     b.Property<decimal>("Valor")
                         .HasColumnType("decimal(65,30)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClienteId");
 
                     b.ToTable("Transacoes");
                 });
@@ -126,26 +116,10 @@ namespace ApiSoftFinance.Migrations
             modelBuilder.Entity("ApiSoftFinance.Domain.Cliente", b =>
                 {
                     b.HasOne("ApiSoftFinance.Domain.ContaBancaria", "ContaBancaria")
-                        .WithOne("Cliente")
-                        .HasForeignKey("ApiSoftFinance.Domain.Cliente", "ContaBancariaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("ContaBancariaId");
 
                     b.Navigation("ContaBancaria");
-                });
-
-            modelBuilder.Entity("ApiSoftFinance.Domain.Transacao", b =>
-                {
-                    b.HasOne("ApiSoftFinance.Domain.Cliente", "Cliente")
-                        .WithMany()
-                        .HasForeignKey("ClienteId");
-
-                    b.Navigation("Cliente");
-                });
-
-            modelBuilder.Entity("ApiSoftFinance.Domain.ContaBancaria", b =>
-                {
-                    b.Navigation("Cliente");
                 });
 #pragma warning restore 612, 618
         }

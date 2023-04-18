@@ -22,7 +22,8 @@ namespace ApiSoftFinance.Migrations
                     ContaBancariaId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Agencia = table.Column<int>(type: "int", nullable: false),
-                    ClienteId = table.Column<int>(type: "int", nullable: false),
+                    Cpf = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Senha = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Saldo = table.Column<decimal>(type: "decimal(65,30)", nullable: false)
@@ -34,12 +35,27 @@ namespace ApiSoftFinance.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Transacoes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Cpf = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Valor = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    Data = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Transacoes", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Clientes",
                 columns: table => new
                 {
-                    ClienteId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Cpf = table.Column<string>(type: "longtext", nullable: true)
+                    Cpf = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Nome = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -59,62 +75,33 @@ namespace ApiSoftFinance.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Estado = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ContaBancariaId = table.Column<int>(type: "int", nullable: false)
+                    ContaBancariaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clientes", x => x.ClienteId);
+                    table.PrimaryKey("PK_Clientes", x => x.Cpf);
                     table.ForeignKey(
                         name: "FK_Clientes_Contas_ContaBancariaId",
                         column: x => x.ContaBancariaId,
                         principalTable: "Contas",
-                        principalColumn: "ContaBancariaId",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Transacoes",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ClienteId = table.Column<int>(type: "int", nullable: true),
-                    Valor = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
-                    Data = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    TipoTransacaoId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Transacoes", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Transacoes_Clientes_ClienteId",
-                        column: x => x.ClienteId,
-                        principalTable: "Clientes",
-                        principalColumn: "ClienteId");
+                        principalColumn: "ContaBancariaId");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Clientes_ContaBancariaId",
                 table: "Clientes",
-                column: "ContaBancariaId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Transacoes_ClienteId",
-                table: "Transacoes",
-                column: "ClienteId");
+                column: "ContaBancariaId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Transacoes");
+                name: "Clientes");
 
             migrationBuilder.DropTable(
-                name: "Clientes");
+                name: "Transacoes");
 
             migrationBuilder.DropTable(
                 name: "Contas");
