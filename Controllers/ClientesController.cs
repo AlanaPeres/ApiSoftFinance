@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiSoftFinance.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class ClientesController : ControllerBase
     {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alana\\Desktop\\ApiSoftFinance\\ApiSoftFinance.csproj": {}
+    "C:\\Users\\alana\\source\\repos\\ApiSoftFinance-main\\ApiSoftFinance.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alana\\Desktop\\ApiSoftFinance\\ApiSoftFinance.csproj": {
+    "C:\\Users\\alana\\source\\repos\\ApiSoftFinance-main\\ApiSoftFinance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alana\\Desktop\\ApiSoftFinance\\ApiSoftFinance.csproj",
+        "projectUniqueName": "C:\\Users\\alana\\source\\repos\\ApiSoftFinance-main\\ApiSoftFinance.csproj",
         "projectName": "ApiSoftFinance",
-        "projectPath": "C:\\Users\\alana\\Desktop\\ApiSoftFinance\\ApiSoftFinance.csproj",
+        "projectPath": "C:\\Users\\alana\\source\\repos\\ApiSoftFinance-main\\ApiSoftFinance.csproj",
         "packagesPath": "C:\\Users\\alana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alana\\Desktop\\ApiSoftFinance\\obj\\",
+        "outputPath": "C:\\Users\\alana\\source\\repos\\ApiSoftFinance-main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alana\\AppData\\Roaming\\NuGet\\NuGet.Config",
