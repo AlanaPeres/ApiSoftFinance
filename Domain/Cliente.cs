@@ -8,16 +8,31 @@ namespace ApiSoftFinance.Domain
     {
 
         [Key]
+        [Required]
+        [StringLength(14, MinimumLength = 11)]
         public string?  Cpf { get; set; }
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
         public string? Nome { get; set; }
+        [Required]
+        [EmailAddress]
         public string? Email { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
+        [Required]
         public string Cep { get; set; }
+        [Required]
         public string Rua { get; set; }
+        [Required]
         public int Numero { get; set; }
+        
         public string Complemento { get; set; }
+        [Required]
         public string Bairro { get; set; }
+        [Required]
         public string Cidade { get; set; }
+        [Required]
         public string Estado { get; set; }
        
 
