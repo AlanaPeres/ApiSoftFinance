@@ -9,38 +9,36 @@ namespace ApiSoftFinance.Controllers
     
     [ApiController]
     [Route("[controller]")]
-    public class ClientesController : ControllerBase
+    public class ContasController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public ClientesController(AppDbContext context)
+        public ContasController(AppDbContext context)
         {
             _context = context;
         }
-
         [HttpGet]
-        public ActionResult<IEnumerable<Cliente>> Get()
+        public ActionResult<IEnumerable<ContaBancaria>> Get()
         {
             try
             {
-                var clientes = _context.Clientes.ToList();
-                if (clientes is null) return NotFound("Clientes não encontrados.");
-                return clientes;
+                var contas = _context.Contas.ToList();
+                if (contas is null) return NotFound("Contas não encontradas.");
+                return contas;
             }
             catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro ao processar sua requisição.");
             }
         }
-
         [HttpGet("{cpf}")]
-        public ActionResult<Cliente>Get(string cpf)
+        public ActionResult<ContaBancaria> Get(string cpf)
         {
             try
             {
-                var cliente = _context.Clientes.FirstOrDefault(c => c.Cpf == cpf);
-                if (cliente is null) return NotFound("Cliente não encontrado");
-                return cliente;
+                var conta = _context.Contas.FirstOrDefault(c => c.Cpf == cpf);
+                if (conta is null) return NotFound("Conta não encontrada");
+                return conta;
             }
             catch (Exception)
             {
@@ -49,45 +47,44 @@ namespace ApiSoftFinance.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(Cliente cliente)
+        public ActionResult Post(ContaBancaria conta)
         {
             try
             {
-                if (cliente is null) return BadRequest("Dados inválidos.");
-                _context.Clientes.Add(cliente);
+                if (conta is null) return BadRequest("Conta inválida.");
+                _context.Contas.Add(conta);
                 _context.SaveChanges();
-                return StatusCode(StatusCodes.Status201Created, cliente);
+                return StatusCode(StatusCodes.Status201Created, conta);
             }
             catch (Exception)
             {
+
                 return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro ao processar sua requisição.");
             }
         }
-
         [HttpPut("{cpf}")]
-        public ActionResult Put(string cpf, Cliente cliente)
+        public ActionResult Put(string cpf, ContaBancaria conta)
         {
             try
             {
-                if (cpf != cliente.Cpf) return BadRequest("Cliente não encontrado");
-                _context.Entry(cliente).State = EntityState.Modified;
+                if (cpf != conta.Cpf) return BadRequest("Cliente não encontrado");
+                _context.Entry(conta).State = EntityState.Modified;
                 _context.SaveChanges();
-                return StatusCode(StatusCodes.Status202Accepted, cliente);
+                return StatusCode(StatusCodes.Status202Accepted, conta);
             }
             catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro ao processar sua requisição.");
             }
         }
-
         [HttpDelete("{cpf}")]
         public ActionResult Delete(string cpf)
         {
             try
             {
-                var cliente = _context.Clientes.FirstOrDefault(c => c.Cpf == cpf);
-                if (cliente is null) return BadRequest("Cliente não encontrado");
-                _context.Clientes.Remove(cliente);
+                var conta = _context.Contas.FirstOrDefault(c => c.Cpf == cpf);
+                if (conta is null) return BadRequest("Cliente não encontrado");
+                _context.Contas.Remove(conta);
                 _context.SaveChanges();
                 return StatusCode(StatusCodes.Status204NoContent);
             }
@@ -97,4 +94,6 @@ namespace ApiSoftFinance.Controllers
             }
         }
     }
+
+
 }
