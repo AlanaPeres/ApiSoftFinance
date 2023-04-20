@@ -7,6 +7,15 @@ using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "_myAllowSpecificOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin();
+        });
+});
+
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -20,6 +29,7 @@ ServerVersion.AutoDetect(connectionString)));
 
 var app = builder.Build();
 app.UseHttpsRedirection();
+app.UseCors("_myAllowSpecificOrigins");
 app.UseAuthorization();
 
 // Configure the HTTP request pipeline.
