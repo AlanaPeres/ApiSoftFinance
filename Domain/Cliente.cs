@@ -10,7 +10,7 @@ namespace ApiSoftFinance.Domain
         [Key]
         [Required]
         [StringLength(14, MinimumLength = 11)]
-        public string?  Cpf { get; set; }
+        public string? Cpf { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 3)]
         public string? Nome { get; set; }
@@ -26,7 +26,7 @@ namespace ApiSoftFinance.Domain
         public string Rua { get; set; }
         [Required]
         public int Numero { get; set; }
-        
+
         public string Complemento { get; set; }
         [Required]
         public string Bairro { get; set; }
@@ -34,7 +34,7 @@ namespace ApiSoftFinance.Domain
         public string Cidade { get; set; }
         [Required]
         public string Estado { get; set; }
-       
+
 
         public Cliente() { }
         public Cliente(string nome, string cpf, DateTime dataNascimento, string email, string cep, string rua, int numero, string complemento, string bairro, string cidade, string estado)
@@ -42,7 +42,7 @@ namespace ApiSoftFinance.Domain
             Nome = nome;
             Cpf = cpf;
             DataNascimento = dataNascimento;
-            Email = email;       
+            Email = email;
             Cep = cep;
             Rua = rua;
             Numero = numero;
@@ -51,11 +51,5 @@ namespace ApiSoftFinance.Domain
             Cidade = cidade;
             Estado = estado;
         }
-
-
-        
-
-
-
     }
 }
