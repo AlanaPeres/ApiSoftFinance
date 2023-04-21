@@ -17,9 +17,11 @@ namespace ApiSoftFinance.Domain
         [Required]
         [EmailAddress]
         public string? Email { get; set; }
+        public string? Senha { get; set; }
         [Required]
         [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
+
         [Required]
         public string Cep { get; set; }
         [Required]

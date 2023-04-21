@@ -9,9 +9,10 @@ namespace ApiSoftFinance.Domain
         public int Agencia { get; set; }
         [Key]
         public int ContaBancariaId { get; set; }
+        public string? Nome { get; set; }
         [ForeignKey("Cpf")]
         public string? Cpf { get; set; }
-        public string? Senha { get; set; }
+        public decimal? Saldo { get; set; }
         
     }
 
