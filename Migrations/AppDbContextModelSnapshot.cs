@@ -22,7 +22,8 @@ namespace ApiSoftFinance.Migrations
             modelBuilder.Entity("ApiSoftFinance.Domain.Cliente", b =>
                 {
                     b.Property<string>("Cpf")
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(14)
+                        .HasColumnType("varchar(14)");
 
                     b.Property<string>("Bairro")
                         .IsRequired()
@@ -44,6 +45,7 @@ namespace ApiSoftFinance.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Estado")
@@ -51,13 +53,18 @@ namespace ApiSoftFinance.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<int>("Numero")
                         .HasColumnType("int");
 
                     b.Property<string>("Rua")
                         .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Senha")
                         .HasColumnType("longtext");
 
                     b.HasKey("Cpf");
@@ -77,8 +84,11 @@ namespace ApiSoftFinance.Migrations
                     b.Property<string>("Cpf")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Senha")
+                    b.Property<string>("Nome")
                         .HasColumnType("longtext");
+
+                    b.Property<decimal?>("Saldo")
+                        .HasColumnType("decimal(65,30)");
 
                     b.HasKey("ContaBancariaId");
 
@@ -92,14 +102,20 @@ namespace ApiSoftFinance.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Cpf")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(14)
+                        .HasColumnType("varchar(14)");
 
                     b.Property<string>("CpfDestino")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(14)
+                        .HasColumnType("varchar(14)");
 
                     b.Property<DateTime>("DataHora")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("TipoTransacao")
+                        .IsRequired()
+                        .HasColumnType("varchar(1)");
 
                     b.Property<decimal>("Valor")
                         .HasColumnType("decimal(65,30)");

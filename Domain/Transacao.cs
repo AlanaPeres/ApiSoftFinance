@@ -14,6 +14,6 @@ namespace ApiSoftFinance.Domain
         public string CpfDestino { get; set; }
         public decimal Valor { get; set; }
         public DateTime DataHora { get; set; }        
-        public TipoTransacao? TipoTransacao { get; set; }
+        public char TipoTransacao { get; set; }
     }
 }
