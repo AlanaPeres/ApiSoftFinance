@@ -3,6 +3,8 @@ using ApiSoftFinance.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace ApiSoftFinance.Controllers
 {
@@ -12,10 +14,11 @@ namespace ApiSoftFinance.Controllers
     public class ClientesController : ControllerBase
     {
         private readonly AppDbContext _context;
-
+        private readonly Random _random;
         public ClientesController(AppDbContext context)
         {
             _context = context;
+            _random = new Random(DateTime.Now.Millisecond);
         }
 
         [HttpGet]
@@ -54,8 +57,25 @@ namespace ApiSoftFinance.Controllers
             try
             {
                 if (cliente is null) return BadRequest("Dados inválidos.");
+
+                var novaConta = new ContaBancaria();
+                int numeroConta;
+                
+                do
+                {
+                    numeroConta = _random.Next(100000, 999999); // Gera um número de 6 dígitos
+                } while (_context.Contas.Any(c => c.ContaBancariaId == numeroConta)); // Verifica se o número já foi utilizado
+
+                novaConta.Agencia = 1515;
+                novaConta.ContaBancariaId = numeroConta;
+                novaConta.Cpf = cliente.Cpf;
+                novaConta.Nome = cliente.Nome;
+                novaConta.Saldo = 000;
+
                 _context.Clientes.Add(cliente);
+                _context.Contas.Add(novaConta);              
                 _context.SaveChanges();
+
                 return StatusCode(StatusCodes.Status201Created, cliente);
             }
             catch (Exception)
