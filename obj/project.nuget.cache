@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2q9ctwlTWcP/xkVHoo1H/9aL0IbBi4rHKijcFi8kA3nDTOhkN/VFmmnzZQIOwH2gP6fQheq/vnQvgggyqofXGw==",
+  "dgSpecHash": "wD6UDaqteyj2RG5AucFbiP+BFlOoIB6tzeo12/Y+HyZbW3fL8oQbN5Nraj5LAF0v+XSF9GRU7BgIGVJc1N4ucw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alana\\source\\repos\\Nova pasta\\ApiSoftFinance\\ApiSoftFinance.csproj",
+  "projectFilePath": "C:\\Users\\alana\\source\\repos\\Atual\\ApiSoftFinance\\ApiSoftFinance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alana\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\alana\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
