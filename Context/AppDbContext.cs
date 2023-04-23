@@ -13,8 +13,9 @@ namespace ApiSoftFinance.Context
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<ContaBancaria> Contas { get; set; }
         public DbSet<Transacao> Transacoes { get; set; }
+        public DbSet<Extrato> Extrato { get; set; }
 
-       
+
         /*  public void OnModelCreating(ModelBuilder modelBuilder)
            {
                modelBuilder.Entity<Cliente>()
