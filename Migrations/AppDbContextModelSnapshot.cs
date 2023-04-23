@@ -95,6 +95,29 @@ namespace ApiSoftFinance.Migrations
                     b.ToTable("Contas");
                 });
 
+            modelBuilder.Entity("ApiSoftFinance.Domain.Extrato", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("ContaDestino")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ContaOrigem")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly>("Data")
+                        .HasColumnType("date");
+
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Extrato");
+                });
+
             modelBuilder.Entity("ApiSoftFinance.Domain.Transacao", b =>
                 {
                     b.Property<int>("Id")

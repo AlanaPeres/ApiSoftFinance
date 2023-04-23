@@ -68,6 +68,23 @@ namespace ApiSoftFinance.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Extrato",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ContaOrigem = table.Column<int>(type: "int", nullable: false),
+                    ContaDestino = table.Column<int>(type: "int", nullable: false),
+                    Valor = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    Data = table.Column<DateOnly>(type: "date", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Extrato", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Transacoes",
                 columns: table => new
                 {
@@ -97,6 +114,9 @@ namespace ApiSoftFinance.Migrations
 
             migrationBuilder.DropTable(
                 name: "Contas");
+
+            migrationBuilder.DropTable(
+                name: "Extrato");
 
             migrationBuilder.DropTable(
                 name: "Transacoes");
