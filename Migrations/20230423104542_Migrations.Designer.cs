@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiSoftFinance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230421184508_Migrations")]
+    [Migration("20230423104542_Migrations")]
     partial class Migrations
     {
         /// <inheritdoc />
@@ -96,6 +96,29 @@ namespace ApiSoftFinance.Migrations
                     b.HasKey("ContaBancariaId");
 
                     b.ToTable("Contas");
+                });
+
+            modelBuilder.Entity("ApiSoftFinance.Domain.Extrato", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("ContaDestino")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ContaOrigem")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly>("Data")
+                        .HasColumnType("date");
+
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Extrato");
                 });
 
             modelBuilder.Entity("ApiSoftFinance.Domain.Transacao", b =>

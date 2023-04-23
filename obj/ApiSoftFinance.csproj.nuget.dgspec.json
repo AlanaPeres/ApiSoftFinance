@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projetos\\C#\\ApiSoftFinance\\ApiSoftFinance.csproj": {}
+    "C:\\Users\\alana\\source\\repos\\Nova pasta (3)\\ApiSoftFinance\\ApiSoftFinance.csproj": {}
   },
   "projects": {
-    "D:\\Projetos\\C#\\ApiSoftFinance\\ApiSoftFinance.csproj": {
+    "C:\\Users\\alana\\source\\repos\\Nova pasta (3)\\ApiSoftFinance\\ApiSoftFinance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\C#\\ApiSoftFinance\\ApiSoftFinance.csproj",
+        "projectUniqueName": "C:\\Users\\alana\\source\\repos\\Nova pasta (3)\\ApiSoftFinance\\ApiSoftFinance.csproj",
         "projectName": "ApiSoftFinance",
-        "projectPath": "D:\\Projetos\\C#\\ApiSoftFinance\\ApiSoftFinance.csproj",
-        "packagesPath": "C:\\Users\\leand\\.nuget\\packages\\",
-        "outputPath": "D:\\Projetos\\C#\\ApiSoftFinance\\obj\\",
+        "projectPath": "C:\\Users\\alana\\source\\repos\\Nova pasta (3)\\ApiSoftFinance\\ApiSoftFinance.csproj",
+        "packagesPath": "C:\\Users\\alana\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alana\\source\\repos\\Nova pasta (3)\\ApiSoftFinance\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\leand\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\alana\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -93,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
