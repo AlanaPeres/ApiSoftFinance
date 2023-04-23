@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alana\\source\\repos\\Nova pasta (3)\\ApiSoftFinance\\ApiSoftFinance.csproj": {}
+    "C:\\Users\\laril\\OneDrive\\Documentos\\Ima - Sharp Coders\\Projetos\\HackaDev\\back-ApiSoftFinance\\new new\\ApiSoftFinance\\ApiSoftFinance.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alana\\source\\repos\\Nova pasta (3)\\ApiSoftFinance\\ApiSoftFinance.csproj": {
+    "C:\\Users\\laril\\OneDrive\\Documentos\\Ima - Sharp Coders\\Projetos\\HackaDev\\back-ApiSoftFinance\\new new\\ApiSoftFinance\\ApiSoftFinance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alana\\source\\repos\\Nova pasta (3)\\ApiSoftFinance\\ApiSoftFinance.csproj",
+        "projectUniqueName": "C:\\Users\\laril\\OneDrive\\Documentos\\Ima - Sharp Coders\\Projetos\\HackaDev\\back-ApiSoftFinance\\new new\\ApiSoftFinance\\ApiSoftFinance.csproj",
         "projectName": "ApiSoftFinance",
-        "projectPath": "C:\\Users\\alana\\source\\repos\\Nova pasta (3)\\ApiSoftFinance\\ApiSoftFinance.csproj",
-        "packagesPath": "C:\\Users\\alana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alana\\source\\repos\\Nova pasta (3)\\ApiSoftFinance\\obj\\",
+        "projectPath": "C:\\Users\\laril\\OneDrive\\Documentos\\Ima - Sharp Coders\\Projetos\\HackaDev\\back-ApiSoftFinance\\new new\\ApiSoftFinance\\ApiSoftFinance.csproj",
+        "packagesPath": "C:\\Users\\laril\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\laril\\OneDrive\\Documentos\\Ima - Sharp Coders\\Projetos\\HackaDev\\back-ApiSoftFinance\\new new\\ApiSoftFinance\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\laril\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[6.0.0, )"
