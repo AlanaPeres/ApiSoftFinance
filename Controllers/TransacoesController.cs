@@ -42,6 +42,7 @@ namespace ApiSoftFinance.Controllers
                 var receiver = await _context.Contas.SingleOrDefaultAsync(c => c.Cpf == cpfDestino);
 
                 if (sender == null || receiver == null) return BadRequest("Conta inválida.");
+                if (sender.Saldo < transacao.Valor) return BadRequest("Saldo insuficiente");
 
                 sender.Saldo -= transacao.Valor;
                 receiver.Saldo += transacao.Valor;
