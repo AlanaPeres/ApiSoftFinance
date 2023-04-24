@@ -23,9 +23,14 @@ namespace ApiSoftFinance.Controllers
         {
             try
             {
-                var transacao = _context.Transacoes.FirstOrDefault(c => c.Cpf == cpf);
-                if (transacao is null) return NotFound("Conta não encontrada");
-                return transacao;
+                var transacoes = _context.Transacoes.Where(t => t.Cpf == cpf).ToList();
+
+                if (transacoes == null || transacoes.Count == 0)
+                {
+                    return NotFound("Não foram encontradas transações para este CPF.");
+                }
+
+                return Ok(transacoes);
             }
             catch (Exception)
             {
@@ -49,6 +54,8 @@ namespace ApiSoftFinance.Controllers
 
                 _context.Entry(sender).State = EntityState.Modified;
                 _context.Entry(receiver).State = EntityState.Modified;
+                _context.Transacoes.Add(transacao);
+
                 _context.SaveChanges();
                 var comprovanteTransacao = new { receiver.Nome, receiver.Agencia, receiver.ContaBancariaId, transacao.Valor };
                 return StatusCode(StatusCodes.Status201Created, comprovanteTransacao);
@@ -71,7 +78,8 @@ namespace ApiSoftFinance.Controllers
                 if (cliente is null) return BadRequest("Conta inválida.");
 
                 cliente.Saldo += transacao.Valor;
-                object value = _context.Transacoes.Add(transacao);
+                object value = _context.Transacoes.Add(transacao);               
+                _context.Transacoes.Add(transacao);
                 _context.SaveChanges();
                 var comprovanteDeposito = new { cliente.Agencia, cliente.ContaBancariaId, transacao.Valor };
                 return StatusCode(StatusCodes.Status201Created, comprovanteDeposito);
