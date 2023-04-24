@@ -26,11 +26,11 @@ namespace ApiSoftFinance.Controllers
              (CASE
                 WHEN (e.tipotransacao = 'P') THEN COALESCE(e.Valor, 0) * -(1)
                 WHEN (e.tipotransacao = 'R') THEN COALESCE(e.Valor, 0)
-                WHEN (e.tipotransacao = 'T' and e.cpf = {cpf}) THEN COALESCE(e.Valor, 0) * -(1)
-                WHEN (e.tipotransacao = 'T' and e.cpfDestino = {cpf}) THEN COALESCE(e.Valor, 0)
+                WHEN (e.tipotransacao = 'T' and e.cpf = '{cpf}') THEN COALESCE(e.Valor, 0) * -(1)
+                WHEN (e.tipotransacao = 'T' and e.cpfDestino = '{cpf}') THEN COALESCE(e.Valor, 0)
             END) AS valor 
             FROM extrato e 
-            where (e.Cpf = {cpf} or e.CpfDestino = {cpf}) and DATE_FORMAT(e.datahora,'%m-%Y') = '{mesAno}' ";
+            where (e.Cpf = '{cpf}' or e.CpfDestino = '{cpf}') and DATE_FORMAT(e.datahora,'%m-%Y') = '{mesAno}' ";
 
 
             var extrato = await _context.Extrato
