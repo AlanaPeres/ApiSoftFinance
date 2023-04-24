@@ -3299,11 +3299,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alana\\Desktop\\consumindoApi\\ApiSoftFinance\\ApiSoftFinance.csproj",
+      "projectUniqueName": "C:\\Users\\alana\\Desktop\\Nova pasta\\ApiSoftFinance\\ApiSoftFinance.csproj",
       "projectName": "ApiSoftFinance",
-      "projectPath": "C:\\Users\\alana\\Desktop\\consumindoApi\\ApiSoftFinance\\ApiSoftFinance.csproj",
+      "projectPath": "C:\\Users\\alana\\Desktop\\Nova pasta\\ApiSoftFinance\\ApiSoftFinance.csproj",
       "packagesPath": "C:\\Users\\alana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alana\\Desktop\\consumindoApi\\ApiSoftFinance\\obj\\",
+      "outputPath": "C:\\Users\\alana\\Desktop\\Nova pasta\\ApiSoftFinance\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alana\\AppData\\Roaming\\NuGet\\NuGet.Config",
