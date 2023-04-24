@@ -57,7 +57,7 @@ namespace ApiSoftFinance.Controllers
                 _context.Transacoes.Add(transacao);
 
                 _context.SaveChanges();
-                var comprovanteTransacao = new { receiver.Nome, receiver.Agencia, receiver.ContaBancariaId, transacao.Valor };
+                var comprovanteTransacao = new { receiver.Nome, receiver.Agencia, receiver.ContaBancariaId, transacao.Valor, transacao.DataHora };
                 return StatusCode(StatusCodes.Status201Created, comprovanteTransacao);
 
             }
@@ -81,7 +81,7 @@ namespace ApiSoftFinance.Controllers
                 object value = _context.Transacoes.Add(transacao);               
                 _context.Transacoes.Add(transacao);
                 _context.SaveChanges();
-                var comprovanteDeposito = new { cliente.Agencia, cliente.ContaBancariaId, transacao.Valor };
+                var comprovanteDeposito = new {transacao.Valor, transacao.DataHora, cliente.Nome};
                 return StatusCode(StatusCodes.Status201Created, comprovanteDeposito);
             }
             catch (Exception)
