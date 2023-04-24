@@ -794,3 +794,10 @@ C:\Users\laril\OneDrive\Documentos\Ima - Sharp Coders\Projetos\HackaDev\back-Api
 C:\Users\laril\OneDrive\Documentos\Ima - Sharp Coders\Projetos\HackaDev\back-ApiSoftFinance\new new\ApiSoftFinance\obj\Debug\net6.0\ApiSoftFinance.pdb
 C:\Users\laril\OneDrive\Documentos\Ima - Sharp Coders\Projetos\HackaDev\back-ApiSoftFinance\new new\ApiSoftFinance\obj\Debug\net6.0\ApiSoftFinance.genruntimeconfig.cache
 C:\Users\laril\OneDrive\Documentos\Ima - Sharp Coders\Projetos\HackaDev\back-ApiSoftFinance\new new\ApiSoftFinance\obj\Debug\net6.0\ref\ApiSoftFinance.dll
+D:\Projetos\C#\ApiSoftFinance\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Projetos\C#\ApiSoftFinance\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Projetos\C#\ApiSoftFinance\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Projetos\C#\ApiSoftFinance\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Projetos\C#\ApiSoftFinance\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Projetos\C#\ApiSoftFinance\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Projetos\C#\ApiSoftFinance\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
